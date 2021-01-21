@@ -17,7 +17,7 @@ output:
 - Philosophy
 - What is R Markdown?
 - Why R Markdown?
-- Basics of R Markdown
+- R Markdown Basics
      + Installation
      + Plain text and Code Chunks
      + Figures and Tables
@@ -75,7 +75,7 @@ Markdown^2^ is a **plain text** formatting syntax: you can read markdown in its 
 <div class="footer" style="margin-top:-100px;font-size:80%;">
 ^1^[https://www.markdownguide.org](https://www.markdownguide.org)</div>
 
-## What is R Markdown? 
+--- 
 
 ```{r echo=FALSE,fig.align='center',out.width="90%"}
 knitr::include_graphics("mddocx.png")
@@ -104,6 +104,7 @@ Philosophical reasons
 - Stable
 </div>
  
+# R Markdown Basics
 
 ## {data-background=foo.png data-background-size=cover}
 

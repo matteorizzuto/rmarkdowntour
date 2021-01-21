@@ -67,7 +67,7 @@ Markdown^2^ is a **plain text** formatting syntax: you can read markdown in its 
 <div class="footer" style="margin-top:-100px;font-size:80%;">
 ^1^[https://www.markdownguide.org](https://www.markdownguide.org)</div>
 
-## What is R Markdown? 
+--- 
 
 <img src="mddocx.png" width="90%" style="display: block; margin: auto;" />
 
