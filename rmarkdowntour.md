@@ -30,19 +30,13 @@ output:
 # Philosophy
 
 ## What is writing?
-```{r echo=FALSE,fig.align='center',out.width="75%"}
-knitr::include_graphics("writing1.png")
-```
+<img src="writing1.png" width="75%" style="display: block; margin: auto;" />
 
 ## What is writing?
-```{r echo=FALSE,fig.align='center',out.width="75%"}
-knitr::include_graphics("writing2.png")
-```
+<img src="writing2.png" width="75%" style="display: block; margin: auto;" />
 
 ## What is writing?
-```{r echo=FALSE,fig.align='center',out.width="75%"}
-knitr::include_graphics("writing3.png")
-```
+<img src="writing3.png" width="75%" style="display: block; margin: auto;" />
 
 ## What is writing? {.build}
 
@@ -57,9 +51,7 @@ Really, all three. Software-wise, this translates into two main schools:
 
 ##
 
-```{r echo=FALSE, fig.align='center',out.width="75%"}
-knitr::include_graphics("feelings.gif")
-```
+<img src="feelings.gif" width="75%" style="display: block; margin: auto;" />
 
 # What is R Markdown?
 
@@ -77,9 +69,7 @@ Markdown^2^ is a **plain text** formatting syntax: you can read markdown in its 
 
 ## What is R Markdown? 
 
-```{r echo=FALSE,fig.align='center',out.width="90%"}
-knitr::include_graphics("mddocx.png")
-```
+<img src="mddocx.png" width="90%" style="display: block; margin: auto;" />
 
 # Why R Markdown?
 
@@ -109,9 +99,12 @@ Philosophical reasons
 
 
 
-```{r}
+
+```r
 plot(cars)
 ```
+
+![](rmarkdowntour_files/figure-html/unnamed-chunk-6-1.png)<!-- -->
 
 Add a new chunk by clicking the *Insert Chunk* button on the toolbar or by pressing *Cmd+Option+I*.
 
@@ -121,9 +114,7 @@ The preview shows you a rendered HTML copy of the contents of the editor. Conseq
 
 
 
-```{r setup, include=FALSE}
-knitr::opts_chunk$set(echo = FALSE)
-```
+
 
 ## R Markdown
 
@@ -139,13 +130,22 @@ When you click the **Knit** button a document will be generated that includes bo
 
 ## Slide with R Output
 
-```{r cars, echo = TRUE}
+
+```r
 summary(cars)
+```
+
+```
+##      speed           dist       
+##  Min.   : 4.0   Min.   :  2.00  
+##  1st Qu.:12.0   1st Qu.: 26.00  
+##  Median :15.0   Median : 36.00  
+##  Mean   :15.4   Mean   : 42.98  
+##  3rd Qu.:19.0   3rd Qu.: 56.00  
+##  Max.   :25.0   Max.   :120.00
 ```
 
 ## Slide with Plot
 
-```{r pressure}
-plot(pressure)
-```
+![](rmarkdowntour_files/figure-html/pressure-1.png)<!-- -->
 

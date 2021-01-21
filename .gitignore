@@ -3,3 +3,6 @@
 .RData
 .Ruserdata
 **/*.png
+**/*.html
+**/*.docx
+**/*.gif
