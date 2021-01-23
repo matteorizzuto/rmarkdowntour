@@ -1,7 +1,7 @@
 ---
 title: "A Brief R Markdown Tour"
 author: "Matteo Rizzuto"
-date: "January 26, 2021"
+date: '`r format(Sys.Date(), "%B %d, %Y")`'
 output: 
   ioslides_presentation:
     widescreen: true
@@ -9,23 +9,28 @@ output:
     css: styles.css
 ---
 
-# Roadmap
+```{r setup, include=FALSE}
+library(tidyverse)
+library(knitr)
+```
+
+# Roadmap {data-background=Rome_Via.jpg data-background-size=cover}
+<div class="footer" style="margin-top:-30px;font-size:75%;color:white"><a href="https://commons.wikimedia.org/wiki/File:Rome_Via_Appia_Antica_13-01-2011_13-21-18.JPG">Paul Hermans</a>, <a href="https://creativecommons.org/licenses/by-sa/3.0">CC BY-SA 3.0</a>, via Wikimedia Commons. </div>
 
 ## Roadmap {.smaller .build}
 - Philosophy
 - What is R Markdown?
-- Why R Markdown?
+- Why use R Markdown?
 - R Markdown Basics
      + Installation
-     + Plain text and Code Chunks
-     + Figures and Tables
-     + Output
+     + Text 
+     + Code
 - Advanced Stuff
      + References and Bibliographies
      + Interactive Figures
      + Look and Feel
 
-# Philosophy
+# Philosophy {data-background=Sanzio_01_Pythagoras.jpg data-background-size=cover}
 
 ## What is writing?
 ```{r echo=FALSE,fig.align='center',out.width="75%"}
@@ -53,25 +58,21 @@ Really, all three. Software-wise, this translates into two main schools:
 <div class="footer" style="margin-top:-100px;font-size:80%;">
 ^1^[https://en.wikipedia.org/wiki/WYSIWYG](WYSIWYG Wikipedia page)</div>
 
-##
-
-```{r echo=FALSE, fig.align='center',out.width="75%"}
-knitr::include_graphics("feelings.gif")
-```
-
-# What is R Markdown?
+# {data-background=rmarkdownlogo.png}
 
 ## What is R Markdown? {.build}
 
 R Markdown is a file format for making **dynamic documents** with R. 
-An R Markdown document is written in markdown and contains chunks of embedded code.
+An R Markdown document is written in **markdown** and contains text, code, and 
+output.
 
-Ok, what's markdown? 
+Ok, what's **markdown**? 
 
-Markdown^2^ is a **plain text** formatting syntax: you can read markdown in its source format and still understand it (in fact, you are doing just that). 
+Markdown is a **plain text** formatting syntax^2^: you can read markdown in 
+its source format and still understand it (in fact, you are doing just that). 
 
 <div class="footer" style="margin-top:-100px;font-size:80%;">
-^1^[https://www.markdownguide.org](https://www.markdownguide.org)</div>
+^2^[https://www.markdownguide.org](https://www.markdownguide.org)</div>
 
 --- 
 
@@ -79,9 +80,9 @@ Markdown^2^ is a **plain text** formatting syntax: you can read markdown in its 
 knitr::include_graphics("mddocx.png")
 ```
 
-# Why R Markdown?
+# Why use R Markdown?
 
-## Why R Markdown?
+## Why use R Markdown?
 
 <div class="columns-2">
 Practical reasons
@@ -92,40 +93,120 @@ Practical reasons
 - Versatile
 - Free
 
+
 Philosophical reasons
 
-- WYSIWYG vs. WISIWIT
-- Let's you focus on the writing
-- Open
-- Transparent
-- Version Control
+- WISIWIT >> WYSIWYG (?) 
+- Free
 </div>
+
+## Why use R Markdown?
+
+```{r why-rmarkdown, echo=FALSE,fig.align='center',out.width="75%"}
+knitr::include_graphics("/Users/matteo/stats-illustrations/rstats-artwork/reproducibility_court.png")
+```
+
+<div class="footer" style="margin-top:-100px;font-size:80%;">
+Artwork by <a href="https://github.com/allisonhorst/stats-illustrations"> @allison_horst</a>, <a href="https://creativecommons.org/licenses/by/4.0/">CC-BY 4.0</a>. </div>
  
 # R Markdown Basics
 
-## Installation
+## Installation {.build}
 
 If you installed RStudio, congrats! You're all set to start using R Markdown.
 
 If you prefer to not use RStudio, make sure to install the `rmarkdown` package.
 
 In either case, make sure to install the `tinytex` package, which will let you 
-export your work as PDF.
+export your work as PDF. 
 
-## Anatomy of an R Markdown document {.build}
+You need *nothing* else.
 
-An R Markdown document (.Rmd) has three main components: metadata, text, and code. 
+## The R Markdown formula 
 
-- Metadata go at the very top of you file, written using YAML
-- You write your text as if you were writing in Notepad/TextEdit
-- For code chunks, you will need to
-    + open the chunk
-    + specify the chunk's code language and options
-    + write your code inside the chunk
-    + close the chunk
+```{r rmarkdown-formula, echo=FALSE,fig.align='center',out.width="75%"}
+knitr::include_graphics("/Users/matteo/stats-illustrations/rstats-artwork/rmarkdown_wizards.png")
+```
 
-Let's look at all these operations together. Let me open a real R Markdown 
-notebook.
+<div class="footer" style="margin-top:-100px;font-size:80%;">
+Artwork by <a href="https://github.com/allisonhorst/stats-illustrations"> @allison_horst</a>, <a href="https://creativecommons.org/licenses/by/4.0/">CC-BY 4.0</a>. </div>
+
+## Text
+
+Writing text in markdown is easy: just type. And if you're missing your **bold**, *italics*, and other formatting... well, that's easy too!
+
+```
+*italics*
+
+**bold**
+
+# Header 1
+
+## Header 2
+
+### Header 3
+```
+
+More text formatting
+[here](https://rmarkdown.rstudio.com/authoring_basics.html), and we'll see 
+some in action in just a few.
+
+## Code {.build}
+
+Right, now to the real deal. Markdown lets you seamlessly switch from writing 
+plain old text to code. 
+
+What kind of code? R, obviously, but also Python, Bash, SQL,...
+
+Of course, you got to tell R that you're about to switch from plain text to 
+**magic** text! 
+
+```{r rmarkdown-patronus, echo=FALSE,fig.align='center',out.width="45%"}
+knitr::include_graphics("patronus.gif")
+```
+
+## Code {.build}
+
+Code in R markdown can be written inline, for instance to print today's date: `r format(Sys.Date(), "%A, %B %d, %Y")`. Use `` ` `` to signal the start and the end of a piece of inline code. 
+
+Code can also take up a portion of the document---i.e., a _chunk_. To open and 
+close a code chunk, use ````  ``` ````. **Always close code chunks!**
 
 
+## Code {.build}
 
+Code chunks can contain any piece of code you want, provided you load the 
+appropriate packages and correctly set your working directory.
+
+```{r echo=TRUE,tidy=TRUE}
+setwd("/Users/matteo/rmarkdowntour/")
+
+library(tidyverse)
+library(knitr)
+```
+
+Don't mess up, be a 
+
+```{r rmarkdown-codehero, echo=FALSE,fig.align='center',out.width="15%"}
+knitr::include_graphics("/Users/matteo/stats-illustrations/rstats-artwork/code_hero.gif")
+```
+
+<div class="footer" style="margin-top:-100px;font-size:80%;">
+Artwork by <a href="https://github.com/allisonhorst/stats-illustrations"> @allison_horst</a>, <a href="https://creativecommons.org/licenses/by/4.0/">CC-BY 4.0</a>. </div>
+
+## Alright,
+
+```{r echo=FALSE,fig.align='center',out.width="90%"}
+knitr::include_graphics("letsdothis.gif")
+```
+
+# Wrapping it up
+
+## 
+
+```{r echo=FALSE,fig.align='center',out.width="90%"}
+knitr::include_graphics("/Users/matteo/stats-illustrations/openscapes/environmental-data-science-r4ds-general.png")
+```
+
+<div class="footer" style="margin-top:-100px;font-size:80%;">
+Artwork from <a href="https://twitter.com/juliesquid">@juliesquid</a> for <a href="https://twitter.com/openscapes">@openscapes</a> (illustrated by <a href="https://twitter.com/allison_horst">@allison_horst</a>).</div>

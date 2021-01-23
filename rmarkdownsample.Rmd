@@ -1,0 +1,204 @@
+---
+title: "From `blank` to HTML"
+author: "Matteo Rizzuto"
+date: '`r format(Sys.Date(), "%B %d, %Y")`'
+output: 
+  html_document:
+    toc: true
+    df_print: paged
+bibliography: rmarkdowntourbibliography.bib
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+library(tidyverse)
+library(knitr)
+```
+
+> **Important!** Research shows that coding with music is 100% 
+more enjoyable. It also helps a lot to have some to muffle your 
+screams of rage when R Markdown will give you the (inevitable) 
+middle finger...
+
+```{r rmarkdown-music, echo=FALSE,fig.align='center'}
+knitr::include_graphics("cuetomusic.gif")
+```
+
+> Be a good coder, be like Deadpool ;) 
+Ok, now we're all set to dive into the magical word of...
+
+```{r rmarkdown-wizkids, echo=FALSE,fig.align='center',fig.cap="Artwork by [\\@allison_horst](https://github.com/allisonhorst/stats-illustrations), [CC-BY 4.0](https://creativecommons.org/licenses/by/4.0/)"}
+knitr::include_graphics("/Users/matteo/stats-illustrations/rstats-artwork/rmarkdown_wizards.png")
+```
+
+# Basics
+
+## Text and Code
+
+This is an R Markdown document. Markdown is a simple formatting syntax for authoring HTML, PDF, and MS Word documents. For more details on using R Markdown see <http://rmarkdown.rstudio.com>.
+
+You can embed an R code chunk like this:
+
+```{r cars, echo=TRUE, tidy=TRUE}
+summary(cars)
+```
+
+Ok, let's pause a second a talk about chunks. We've just run an R chunk. We did this by **opening** the chunk with ```` ``` ````, writing `{r}` after the three backticks that open the chunk, then wrote our code, and finally **closed** the chunk with ```` ``` ````. 
+
+Remember, be a
+
+```{r rmarkdown-codehero, echo=FALSE,fig.align='center',out.width="35%",fig.cap="Artwork by [\\@allison_horst](https://github.com/allisonhorst/stats-illustrations), [CC-BY 4.0](https://creativecommons.org/licenses/by/4.0/)"}
+knitr::include_graphics("/Users/matteo/stats-illustrations/rstats-artwork/code_hero.gif")
+```
+
+We can also set a number of options in this way. To set options, you write `[option name]=[value]` after writing ```` ```{r} ```` Some popular options:
+
+- `include`, should the chunk be part of the output or not? [`TRUE` or `FALSE`]
+- `echo`, to show or hide the code in the output [`TRUE` or `FALSE`]
+- `tidyr`, to tidy the appearance of the code in the output [`TRUE` or `FALSE`]
+
+You can find **all** rmarkdown code chunk options in this [handy pdf cheatsheet](https://rstudio.com/wp-content/uploads/2015/03/rmarkdown-reference.pdf), alongside a description of what values they can take and what do they do to your code.
+
+## Including Plots and Figure
+
+You can also embed plots, for example:
+
+```{r pressure}
+plot(pressure)
+```
+
+Note that the `echo = FALSE` parameter was added to the code chunk to prevent printing of the R code that generated the plot.
+
+What if I add two plots in the same chunk? 
+
+```{r pressure-two, echo=TRUE, tidy=TRUE}
+plot(pressure)
+title(main = "A classic plot")
+
+ggplot(data=pressure, aes(x = temperature, y = pressure)) + geom_point() + ggtitle("A fancier plot") + theme_classic()
+``` 
+
+And what about including an external image?
+
+```{r rmarkdown-rollercoaster, echo=TRUE,fig.align='center',fig.cap="Artwork by [\\@allison_horst](https://github.com/allisonhorst/stats-illustrations), [CC-BY 4.0](https://creativecommons.org/licenses/by/4.0/)"}
+knitr::include_graphics("/Users/matteo/stats-illustrations/rstats-artwork/r_rollercoaster.png")
+```
+
+## What about Tables and data frames?
+
+
+Well, that depends. If it is a simple table, you can just 
+type it out. For instance:
+
+Variable       Description                                   Units     Range
+-------------  --------------------------------------------- --------- -----
+N~i~           Nutrients stocks in patch _i_                 g         >0
+P~i~           Producers stocks in patch _i_                 g         >0
+C~i~           Consumers stocks in patch _i_                 g         >0
+-------------  --------------------------------------------- --------- -----
+
+Of course, just as you can embed plots, you can also embed more complex tables 
+and data frames:
+
+```{r table, echo=TRUE, tidy=TRUE}
+pressure
+```
+
+Or, to be a bit fancier, one can use function `kable` and 
+the `kableExtra` package:
+
+```{r kabled-table, echo=TRUE, tidy=TRUE}
+library(kableExtra)
+
+kable(pressure) %>% 
+  kable_styling(bootstrap_options = c("striped", "hover", "condensed"), 
+                fixed_thead = TRUE) %>% scroll_box(width = "100%", height = "150px")
+```
+
+## Writing, Running, Knitting... what?
+
+Alright, well, now that we've done all this stuff, it would be 
+nice to see the final product, wouldn't it?
+
+Getting to the cool-looking HTML output is easy-peasy: look at 
+the top of this tab. You'll see a little icon showing a blue 
+yarn stabbed by a needles, with the label "Knit" next to it.
+
+When you click the **Knit** button a document will be generated 
+that includes both content as well as the output of any embedded 
+R code chunks within the document. 
+
+# Advanced
+
+## References and Bibliographies {.tabset .tabset-pills}
+
+Alright, you got your code, you got your text, your got your 
+fancy swanky plots. However, we all know it's not a real piece 
+of scientific writing if there is not at least one `however` and 
+several references (and a double negative, if you're Anne).
+
+So, references. R Markdown relies on a similarly plain-text format to deal with these: BibTeX. Essentially, the workflow is this:
+
+### Step 1
+You create a text file, save it with `.bib` extension in the same directory as your `.Rmd` file
+
+### Step 2 
+Start populating it with citations: all journals/search engines 
+allow you to export BibTeX formatted citations, and several free 
+pieces of software exist to help you manage them (I prefer to do 
+it by hand). 
+
+A typical BibTex entry looks like this:
+
+```
+@article{allaire2018,
+  title={rmarkdown: Dynamic Documents for R},
+  author={Allaire, J and Xie, Yihui and McPherson, Jonathan and Luraschi, Javier and Ushey, Kevin and Atkins, Aron and Wickham, Hadley and Cheng, Joe and Chang, Winston and Iannone, Richard},
+  journal={R package version},
+  volume={1},
+  number={11},
+  year={2018}
+}
+```
+
+### Step 3
+
+Now come back to your R Markdown document. We need to tell R 
+Markdown that we have a bibliography file (`.bib`), that we want 
+R Markdown to use it when we will hit the **Knit** button, and 
+that some of the words in our text are going to be references. 
+How do we do all this? 
+
+First things first. We go back to the YAML metadata at the very 
+top and we add this new item to the list of options:
+
+```
+bibliography: rmarkdowntourbibliography.bib
+```
+
+This tells R Markdown two things: (i) that we are going to 
+insert references in the text we are going to write and (ii) 
+that when we hit **Knit**, we want R Markdown to go look for 
+that `.bib` file to find the references.
+
+Now, to add the references to the text itself. 
+
+### Step 4
+
+Whenever and wherever you'd like to add a citation, you type
+``` [@citationkey] ```. `citationkey` is BibTeX code, and it is 
+a unique identifier for each item in a `.bib` file.
+
+Using the reference I showed you above, I type ``` [@allaire2018] ``` and it produces [@allaire2018]. If you scroll to the bottom, 
+you'll find a complete citation for it.
+
+Now, R Markdown is smart but not \*that\* smart, so it will not 
+create a section header for your 
+references/bibliography/literature cited section. Don't forget 
+to add it yourself at the very end of your document!
+
+## Version Control
+
+
+
+# References
