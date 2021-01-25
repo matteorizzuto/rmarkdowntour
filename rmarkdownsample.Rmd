@@ -5,7 +5,10 @@ date: '`r format(Sys.Date(), "%B %d, %Y")`'
 output: 
   html_document:
     toc: true
+    toc_foat: true
     df_print: paged
+    code_folding: 'show'
+    number_sections: true
 bibliography: rmarkdowntourbibliography.bib
 ---
 
@@ -14,18 +17,6 @@ knitr::opts_chunk$set(echo = TRUE)
 library(tidyverse)
 library(knitr)
 ```
-
-> **Important!** Research shows that coding with music is 100% 
-more enjoyable. It also helps a lot to have some to muffle your 
-screams of rage when R Markdown will give you the (inevitable) 
-middle finger...
-
-```{r rmarkdown-music, echo=FALSE,fig.align='center'}
-knitr::include_graphics("cuetomusic.gif")
-```
-
-> Be a good coder, be like Deadpool ;) 
-Ok, now we're all set to dive into the magical word of...
 
 ```{r rmarkdown-wizkids, echo=FALSE,fig.align='center',fig.cap="Artwork by [\\@allison_horst](https://github.com/allisonhorst/stats-illustrations), [CC-BY 4.0](https://creativecommons.org/licenses/by/4.0/)"}
 knitr::include_graphics("/Users/matteo/stats-illustrations/rstats-artwork/rmarkdown_wizards.png")
@@ -110,9 +101,7 @@ the `kableExtra` package:
 ```{r kabled-table, echo=TRUE, tidy=TRUE}
 library(kableExtra)
 
-kable(pressure) %>% 
-  kable_styling(bootstrap_options = c("striped", "hover", "condensed"), 
-                fixed_thead = TRUE) %>% scroll_box(width = "100%", height = "150px")
+kable(pressure) %>% kable_styling(bootstrap_options = c("striped", "hover", "condensed"), fixed_thead = TRUE) %>% scroll_box(width = "100%", height = "150px")
 ```
 
 ## Writing, Running, Knitting... what?
@@ -127,8 +116,6 @@ yarn stabbed by a needles, with the label "Knit" next to it.
 When you click the **Knit** button a document will be generated 
 that includes both content as well as the output of any embedded 
 R code chunks within the document. 
-
-# Advanced
 
 ## References and Bibliographies {.tabset .tabset-pills}
 
@@ -196,9 +183,5 @@ Now, R Markdown is smart but not \*that\* smart, so it will not
 create a section header for your 
 references/bibliography/literature cited section. Don't forget 
 to add it yourself at the very end of your document!
-
-## Version Control
-
-
 
 # References
