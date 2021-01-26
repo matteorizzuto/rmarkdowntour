@@ -7,6 +7,7 @@ output:
     widescreen: true
     logo: lablogo.png
     css: styles.css
+    self_contained: true
 ---
 
 ```{r setup, include=FALSE}
@@ -15,7 +16,7 @@ library(knitr)
 ```
 
 # Roadmap {data-background=Rome_Via.jpg data-background-size=cover}
-<div class="footer" style="margin-top:-50px;font-size:75%;color:white"><a href="https://commons.wikimedia.org/wiki/File:Rome_Via_Appia_Antica_13-01-2011_13-21-18.JPG">Paul Hermans</a>, <a href="https://creativecommons.org/licenses/by-sa/3.0">CC BY-SA 3.0</a>, via Wikimedia Commons. </div>
+<div class="footer" style="margin-top:-100px;font-size:75%;color:white"><a href="https://commons.wikimedia.org/wiki/File:Rome_Via_Appia_Antica_13-01-2011_13-21-18.JPG">Paul Hermans</a>, <a href="https://creativecommons.org/licenses/by-sa/3.0">CC BY-SA 3.0</a>, via Wikimedia Commons. </div>
 
 ## Roadmap {.build}
 - Philosophy
@@ -29,7 +30,7 @@ library(knitr)
 - Wrap up
 
 # Philosophy {data-background=Sanzio_01_Pythagoras.jpg data-background-size=cover}
-<div class="footer" style="margin-top:-50px;font-size:50%;color:white">
+<div class="footer" style="margin-top:-100px;font-size:50%;color:white">
 <a href="https://it.wikipedia.org/wiki/Pitagora#/media/File:Sanzio_01_Pythagoras.jpg">Pitagoras</a>, The School of Athens (detail). Raffaello Sanzio, 1511. Vatican City. </div>
 
 ## What is writing? {.build}
@@ -55,7 +56,7 @@ Really, all three. Software-wise, this translates into two main schools:
 
 - **WISIWIT**--_What I See Is What I Type_: typesetting software, e.g., LaTeX^1^
 
-<div class="footer" style="margin-top:-50px;font-size:50%;">
+<div class="footer" style="margin-top:-100px;font-size:50%;">
 ^1^[https://en.wikipedia.org/wiki/WYSIWYG](WYSIWYG Wikipedia page)</div>
 
 # {data-background=rmarkdownlogo.png}
@@ -78,7 +79,7 @@ its source format and still understand it, like this:
 Hello, Lab! Y'all still with me?
 ```
 
-<div class="footer" style="margin-top:-50px;font-size:50%;">
+<div class="footer" style="margin-top:-100px;font-size:50%;">
 ^2^[https://www.markdownguide.org](https://www.markdownguide.org)</div>
 
 --- 
@@ -120,7 +121,7 @@ knitr::include_graphics("mddocx.png")
 knitr::include_graphics("/Users/matteo/stats-illustrations/rstats-artwork/reproducibility_court.png")
 ```
 
-<div class="footer" style="margin-top:-50px;font-size:50%;">
+<div class="footer" style="margin-top:-100px;font-size:50%;">
 Artwork by <a href="https://github.com/allisonhorst/stats-illustrations"> @allison_horst</a>, <a href="https://creativecommons.org/licenses/by/4.0/">CC-BY 4.0</a>. </div>
  
 # R Markdown Basics
@@ -146,7 +147,7 @@ knitr::include_graphics("thatsall.gif")
 knitr::include_graphics("/Users/matteo/stats-illustrations/rstats-artwork/rmarkdown_wizards.png")
 ```
 
-<div class="footer" style="margin-top:-50px;font-size:50%;">
+<div class="footer" style="margin-top:-100px;font-size:50%;">
 Artwork by <a href="https://github.com/allisonhorst/stats-illustrations"> @allison_horst</a>, <a href="https://creativecommons.org/licenses/by/4.0/">CC-BY 4.0</a>. </div>
 
 ## Text {.build}
@@ -226,7 +227,7 @@ Don't mess up, be a
 knitr::include_graphics("/Users/matteo/stats-illustrations/rstats-artwork/code_hero.gif")
 ```
 
-<div class="footer" style="margin-top:-50px;font-size:50%;">
+<div class="footer" style="margin-top:-100px;font-size:50%;">
 Artwork by <a href="https://github.com/allisonhorst/stats-illustrations"> @allison_horst</a>, <a href="https://creativecommons.org/licenses/by/4.0/">CC-BY 4.0</a>. </div>
 
 ## Output
@@ -254,7 +255,7 @@ knitr::include_graphics("letsdothis.gif")
 knitr::include_graphics("/Users/matteo/stats-illustrations/openscapes/environmental-data-science-r4ds-general.png")
 ```
 
-<div class="footer" style="margin-top:-50px;font-size:50%;">
+<div class="footer" style="margin-top:-100px;font-size:50%;">
 Artwork from <a href="https://twitter.com/juliesquid">@juliesquid</a> for <a href="https://twitter.com/openscapes">@openscapes</a> (illustrated by <a href="https://twitter.com/allison_horst">@allison_horst</a>).</div>
 
 ## Wrapping it up {.build}
