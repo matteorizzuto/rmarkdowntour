@@ -10,11 +10,10 @@
 }
 
 slides > slide:not(.nobackground):before {
-  width: 120px;
-  height: 75px;
-  background-size: 120px 75px;
+  width: 150px;
+  height: 90px;
+  background-size: 150px 90px;
 }
-
 
 .footer {
     color: black;
