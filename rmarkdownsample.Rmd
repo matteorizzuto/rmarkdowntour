@@ -19,7 +19,7 @@ library(knitr)
 ```
 
 ```{r rmarkdown-wizkids, echo=FALSE,fig.align='center',fig.cap="Artwork by [\\@allison_horst](https://github.com/allisonhorst/stats-illustrations), [CC-BY 4.0](https://creativecommons.org/licenses/by/4.0/)"}
-knitr::include_graphics("/Users/matteo/stats-illustrations/rstats-artwork/rmarkdown_wizards.png")
+knitr::include_graphics("images/rmarkdown_wizards.png")
 ```
 
 # Basics
@@ -39,7 +39,7 @@ Ok, let's pause a second a talk about chunks. We've just run an R chunk. We did 
 Remember, be a
 
 ```{r rmarkdown-codehero, echo=FALSE,fig.align='center',out.width="35%",fig.cap="Artwork by [\\@allison_horst](https://github.com/allisonhorst/stats-illustrations), [CC-BY 4.0](https://creativecommons.org/licenses/by/4.0/)"}
-knitr::include_graphics("/Users/matteo/stats-illustrations/rstats-artwork/code_hero.gif")
+knitr::include_graphics("images/code_hero.gif")
 ```
 
 We can also set a number of options in this way. To set options, you write `[option name]=[value]` after writing ```` ```{r} ```` Some popular options:
@@ -72,7 +72,7 @@ ggplot(data=pressure, aes(x = temperature, y = pressure)) + geom_point() + ggtit
 And what about including an external image?
 
 ```{r rmarkdown-rollercoaster, echo=TRUE,fig.align='center',fig.cap="Artwork by [\\@allison_horst](https://github.com/allisonhorst/stats-illustrations), [CC-BY 4.0](https://creativecommons.org/licenses/by/4.0/)"}
-knitr::include_graphics("/Users/matteo/stats-illustrations/rstats-artwork/r_rollercoaster.png")
+knitr::include_graphics("images/r_rollercoaster.png")
 ```
 
 ## What about Tables and data frames?

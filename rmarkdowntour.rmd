@@ -15,11 +15,11 @@ library(tidyverse)
 library(knitr)
 ```
 
-# Roadmap {data-background=Rome_Via.jpg data-background-size=cover}
+# Roadmap {data-background=images/Rome_Via.jpg data-background-size=cover}
 <div class="footer" style="margin-top:-100px;font-size:75%;color:white"><a href="https://commons.wikimedia.org/wiki/File:Rome_Via_Appia_Antica_13-01-2011_13-21-18.JPG">Paul Hermans</a>, <a href="https://creativecommons.org/licenses/by-sa/3.0">CC BY-SA 3.0</a>, via Wikimedia Commons. </div>
 
 ## Roadmap {.build}
-- Philosophy
+- Writing philosophy
 - What is R Markdown?
 - Why use R Markdown?
 - R Markdown Basics
@@ -29,23 +29,23 @@ library(knitr)
      + References and Bibliographies
 - Wrap up
 
-# Philosophy {data-background=Sanzio_01_Pythagoras.jpg data-background-size=cover}
+# Philosophy {data-background=images/Sanzio_01_Pythagoras.jpg data-background-size=cover}
 <div class="footer" style="margin-top:-100px;font-size:50%;color:white">
 <a href="https://it.wikipedia.org/wiki/Pitagora#/media/File:Sanzio_01_Pythagoras.jpg">Pitagoras</a>, The School of Athens (detail). Raffaello Sanzio, 1511. Vatican City. </div>
 
 ## What is writing? {.build}
 ```{r echo=FALSE,fig.align='center',out.width="75%"}
-knitr::include_graphics("writing1.png")
+knitr::include_graphics("images/writing1.png")
 ```
 
 ## What is writing?
 ```{r echo=FALSE,fig.align='center',out.width="75%"}
-knitr::include_graphics("writing2.png")
+knitr::include_graphics("images/writing2.png")
 ```
 
 ## What is writing?
 ```{r echo=FALSE,fig.align='center',out.width="75%"}
-knitr::include_graphics("writing3.png")
+knitr::include_graphics("images/writing3.png")
 ```
 
 ## What is writing? {.build}
@@ -85,7 +85,7 @@ Hello, Lab! Y'all still with me?
 --- 
 
 ```{r echo=FALSE,fig.align='center',out.width="90%"}
-knitr::include_graphics("mddocx.png")
+knitr::include_graphics("images/mddocx.png")
 ```
 
 # Why use R Markdown?
@@ -138,7 +138,7 @@ package, which will let you export your work as PDF
 Information. 
 
 ```{r rmarkdown-install, echo=FALSE,fig.align='center',out.width="50%"}
-knitr::include_graphics("thatsall.gif")
+knitr::include_graphics("images/thatsall.gif")
 ```
 
 ## The R Markdown formula 
@@ -194,7 +194,7 @@ Of course, you got to tell R that you're about to write
 some **magic** text, or it will just spin...
 
 ```{r rmarkdown-patronus, echo=FALSE,fig.align='center',out.width="45%"}
-knitr::include_graphics("patronus.gif")
+knitr::include_graphics("images/patronus.gif")
 ```
 
 ## Code {.build}
@@ -244,7 +244,7 @@ The output looks beautiful, like the presentation you're looking at ;)
 ## Alright,
 
 ```{r echo=FALSE,fig.align='center',out.width="75%"}
-knitr::include_graphics("letsdothis.gif")
+knitr::include_graphics("images/letsdothis.gif")
 ```
 
 # Wrapping it up
@@ -275,7 +275,7 @@ If you do, consider learning about _git_ and _version control_. They'll make you
 > **Important!** Research shows that coding with music is 100% more enjoyable. It also helps a lot to cover your screams of rage when R Markdown will give you the (inevitable) middle finger. So, always remember to
 
 ```{r rmarkdown-music,echo=FALSE,fig.align='center',out.width="80%"}
-knitr::include_graphics("cuetomusic.gif")
+knitr::include_graphics("images/cuetomusic.gif")
 ```
 
 
