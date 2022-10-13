@@ -6,3 +6,11 @@
 **/*.docx
 **/*.gif
 **/*.jpg
+rmarkdowntour_quarto_files/
+renv/
+*.lock
+images
+.Rprofile
+.DS_Store
+**/*.ipynb
+**/*.html

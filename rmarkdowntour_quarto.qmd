@@ -1,0 +1,424 @@
+---
+title: "(R)markdown"
+subtitle: "A brief tour"
+author: "Matteo Rizzuto, Ph.D."
+date: '`r format(Sys.Date(), "%B %d, %Y")`'
+slide-number: c/t
+code-link: true
+fig-responsive: true
+footnotes-hover: true
+format: 
+  revealjs:
+    theme: default
+    transition: fade
+    incremental: true
+    toc: true
+    toc-title: "Roadmap"
+    toc-depth: 1
+    callout-appearance: simple
+    css: style.css
+    code-overflow: wrap
+    code-block-bg: false
+    code-line-numbers: true
+---
+
+# Introduction
+
+```{r setup}
+#| echo: false
+library(emo)
+```
+
+## Writing philosophy {background-image="images/Sanzio_01_Pythagoras.jpg" background-opacity="0.5"}
+
+::: footer
+[Pythagors, The School of Athens (detail). Raffaello Sanzio, 1511. Vatican Museums, Vatican City.](https://it.wikipedia.org/wiki/Pitagora#/media/File:Sanzio_01_Pythagoras.jpg)
+:::
+
+## How do you write? {center=true}
+
+:::{.r-stack}
+:::{.fragment .fade-in .larger fragment-index=4}
+:::{.callout-caution icon="false"}
+  Really, **all three**.
+:::
+:::
+
+::: {.fragment .fade-in-then-out fragment-index=1}
+![](images/TaBa_HTBB.gif){width=150% fig-align="center"}
+:::
+
+::: {.fragment .fade-in-then-out fragment-index=2}
+![](images/writing_word.png){fig-align="center"}
+:::
+
+::: {.fragment .fade-in-then-out fragment-index=3}
+![](images/writing_latex_overleaf.png){width=90% fig-align="center"}
+:::
+:::
+
+## A tale of two software families
+
+::::{.columns}
+
+:::{.column width=49%}
+
+**What you see is what you get**
+
+![](images/Microsoft_Office_Word.png){.fragment width="150" height="150"}
+![](images/1920px-LibreOffice_6.1_Writer_Icon.png){.fragment width="150" height="150"}
+
+:::
+
+:::{.column width=51%}
+
+**What you see is what you type**
+
+![](images/LaTeX_project_logo_bird.png){.fragment width="280" height="100"}
+:::
+
+::::
+
+# What is Rmarkdown?
+
+## Definitions
+
+::: {.r-stack}
+
+::: {.fragment .fade-out}
+![](images/logo.png){fig-align="center"}
+
+:::{.callout-note}
+**Rmarkdown**
+
+A file format for making _dynamic documents_ with R.
+:::
+
+:::{.callout-tip}
+Kind of half-way between Word and LaTeX
+:::
+:::
+
+::: {.fragment .fade-in-then-out}
+Rmarkdown documents are written in **markdown** and contain text, code, and output.
+:::
+
+::: {.fragment .fade-in-then-out}
+Ok, so what's **markdown**?
+:::
+
+::: {.fragment .fade-in-then-out}
+:::{.callout-note}
+**markdown**
+  
+a lightweight _markup language_ for creating formatted text using a plain-text editor
+:::
+
+::: {layout="[-1, 1, 1, -1]" layout-valign="center"}
+![macOS TextEdit](images/TextEdit_icon.png){width="120" height="120"} 
+
+![Windows Notepad](images/Notepad.png){width="120" height="120"}
+:::
+
+:::{.callout-tip}
+You can read markdown in its source format and still understand it.
+:::
+:::
+
+::: {.fragment .fade-in-then-out}
+``` markdown
+Hello, folks! Y'all still with me? 
+```
+:::
+
+:::
+
+## Why use Rmarkdown? {.smaller}
+
+:::: {.columns}
+
+:::{.column width=50%}
+**Practical reasons**
+
+  * Easy and accessible 
+  * Transferable and Versatile
+  * _One pot_ research
+      + rationale
+      + analyses
+      + interpretation
+  * Version Control
+  
+:::
+
+:::{.column width=50%}
+**Philosophical reasons**
+
+  * Writing, not Formatting 
+  * Transparent
+      + Reproducibility
+      + Replicability
+  * Shorter workflow
+      + less software involved
+
+:::
+
+::::
+
+## The Rmarkdown formula
+
+![Artwork by [Allison Horst](https://github.com/allisonhorst/stats-illustrations), [CC-BY 4.0](https://creativecommons.org/licenses/by/4.0/)](images/rmarkdown_wizards.png){fig-align="center"}
+
+
+# Rmarkdown Basics
+
+## Installation
+
+::: {layout="[[40,-5, 30,30], [1]]" layout-valign="center"}
+![](images/RStudio-Logo-Flat.png){.fragment .semi-fade-out fragment-index=1}
+
+![](images/logo.png){.fragment .fade-in-then-semi-out fragment-index=2 width="200" height="220"} 
+
+![](images/logo-tinytex.png){.fragment .fade-in-then-semi-out fragment-index=2 width="200" height="220"}
+
+![](images/thatsall.gif){.fragment fragment-index=3 fig-align="center"}
+:::
+
+## Anatomy of a Rmarkdown file
+
+```{code-line-numbers="|1-5|7|9-15|17-19"}
+---
+title: "Untitled"
+output: html_document
+date: "2022-10-11"
+---
+
+## R Markdown
+
+This is an R Markdown document. Markdown is a simple formatting syntax for 
+authoring HTML, PDF, and MS Word documents. For more details on using R
+Markdown see <http://rmarkdown.rstudio.com>.
+
+When you click the **Knit** button a document will be generated that 
+includes both content as well as the output of any embedded R code chunks
+within the document. You can embed an R code chunk like this:
+
+\```{{r}}
+summary(cars)
+\```
+
+```
+
+## Text
+
+Formatting is all about  `r emo::ji("wrap")`
+
+  * `r emo::ji("wrap")` a word in double asterisks \*\* to **bold it**
+  * use an underscore \_ `r emo::ji("wrap")` to _italicize_
+  * ^Super^script you get by using a \^ `r emo::ji("wrap")`
+  * ~Sub~script appears using a \~ `r emo::ji("wrap")`
+  * headers are weirdos, mark'em with \#
+
+:::{.fragment .fade-in}
+:::{.callout-note}
+More on text formatting
+[here](https://rmarkdown.rstudio.com/authoring_basics.html)
+:::
+:::
+
+## Code
+
+:::{.r-stack}
+:::{.fragment .fade-out}
+Rmarkdown lets you seamlessly switch from writing plain old text to code. 
+:::
+
+:::{.fragment .fade-in-then-out}
+Of course, you got to tell R that you're about to write some **magic** text, or it will just spin...
+
+![](images/patronus.gif){fig-align="center"}
+:::
+
+:::{.fragment .fade-in-then-out}
+Code in Rmarkdown can be written **inline** or in **chunks** that appear alongside your text. Again, it's all about `r emo::ji("wrap")`
+:::
+
+:::{.fragment .fade-in-then-out}
+Use **`` ` ``** to `r emo::ji("wrap")` a piece of **inline** code. 
+
+|
+| For instance, writing 
+|
+|     ``` ` ``` ```r``` ```format(Sys.Date(), "%A, %B %d, %Y")``` ``` ` ``` 
+|
+| produces today's date, `r format(Sys.Date(), "%A, %B %d, %Y")`
+:::
+
+:::
+
+## Code chunks
+
+:::{.fragment .fade-in}
+| **Chunks** are portions of your Rmarkdown text that contain _just_ code 
+|
+| To open and close a code chunk, use **````  ``` ````**
+:::
+
+|
+|
+
+:::{.fragment .fade-in}
+If **inline** code is a `r emo::ji("wrap")`, code **chunks** are `r emo::ji("burger")`
+:::
+
+|
+|
+
+:::{.fragment .fade-in}
+:::{.fragment .highlight-red}
+**Always close your chunks!**
+:::
+:::
+
+## An example
+
+. . . 
+
+I am going to make a **_fancy_** plot!
+
+. . . 
+
+```{r}
+#| echo: true
+#| code-line-numbers: 1-2|4-6|7-9|10-14|15|16-17|18
+#| output-location: slide
+#| fig-width: 9
+#| fig-dpi: 300
+#| fig-align: center
+#| fig-asp: 0.7
+#| fig-alt: "A box-and-whiskers plot of flipper length in millimeters by penguin species."
+#| layout-valign: center
+library(tidyverse)
+library(palmerpenguins)
+
+ggplot(data = penguins,
+       aes(x = species, 
+           y = flipper_length_mm)) + 
+  geom_boxplot(aes(color = species), 
+               width = 0.3, 
+               show.legend = FALSE) +
+  geom_jitter(aes(color = species), 
+              alpha = 0.5, 
+              show.legend = FALSE, 
+              position = position_jitter(width = 0.2, 
+                                         seed = 0)) +
+  scale_color_manual(values = c("darkorange","purple","cyan4")) +
+  labs(x = "Species",
+       y = "Flipper length (mm)") + 
+  theme_classic()
+```
+
+## Remember
+
+Close your chunks, be a
+
+:::{.fragment .fade-in}
+![Artwork by [Allison Horst](https://github.com/allisonhorst/stats-illustrations), [CC-BY 4.0](https://creativecommons.org/licenses/by/4.0/)](images/code_hero.gif){fig-align="center"}
+:::
+
+## Output
+
+:::{.r-stack}
+:::{.fragment .fade-out}
+R uses [pandoc](https://pandoc.org) to read Rmarkdown and blurt out a fancy-looking thing, usually an **HTML** file. 
+:::
+
+:::{.fragment .fade-in-then-out}
+:::{.callout-note}
+**pandoc**
+
+A free, universal document converter. It can convert almost any document format into any other format.
+:::
+:::
+
+:::{.fragment .fade-in-then-out}
+![](images/surge-silver-beauty.jpeg){width=80% fig-align="center"}
+:::
+
+:::{.fragment .fade-in}
+:::{.callout-warning}
+**Do not worry**
+
+You installed pandoc alongside RStudio and Rmarkdown, so it's already there
+:::
+:::
+:::
+
+___
+
+![](images/letsdothis.gif)
+
+# Wrapping it all up
+
+## Final thoughts
+
+:::{.r-stack}
+:::{.fragment .fade-out}
+I hope I've convinced you to at least try Rmarkdown out
+:::
+
+:::{.fragment .fade-in-then-out}
+You can do **a lot** more than what I showed you today, but these are the basics and will take you a long way
+:::
+
+:::{.fragment .fade-in}
+Consider using _git_ when working with Rmarkdown. It'll make your life **_so_** much easier!
+
+![](images/rmarkdown_git_love.png){width="900" height="140" fig-align="center"}
+
+:::
+
+:::
+
+## Some useful resources {.smaller}
+
+::::{.columns}
+
+:::{.column width=50%}
+
+**R Markdown**
+
+  * [R Markdwon's home page](https://rmarkdown.rstudio.com/index.html)
+  * [R Markdown: The Definitive Guide](https://bookdown.org/yihui/rmarkdown/), by Yihui Xie, J. J. Allaire, Garrett Grolemund
+  * [R & RStudio, Rmarkdown](https://carpentries-incubator.github.io/open-science-with-r/02-Rstudio/index.html) in [Introduction to Open Data Science with R](https://carpentries-incubator.github.io/open-science-with-r/), by [The Carpentries](https://carpentries.org)
+  * [stackoverflow](https://stackoverflow.com/questions/tagged/r-markdown)
+
+:::
+
+:::{.column width=50%}
+**Version Control**
+
+  * Nat's presentation from last week :D
+  * [Basics of version control with git](https://git-scm.com/videos)
+  * [Basics of collaborative version control with GitHub](https://www.youtube.com/githubguides)
+  * [Google](https://www.google.com)
+
+:::
+
+::::
+
+## One more thing
+
+:::{.callout-warning}
+**One more thing...**
+
+I've actually written this presentation in [Quarto](https://quarto.org). Check it out!
+:::
+
+![](images/quarto.png){width="320" height="77" fig-align="center"}
+
+## And another thing
+
+
+:::{.callout-warning}
+What's everyone's level of confidence or familiarity with `ggplot2`?
+:::
